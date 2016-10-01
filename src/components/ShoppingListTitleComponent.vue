@@ -1,6 +1,6 @@
 <template lang="jade">
   a(:href='href', :aria-controls='id', role="tab", data-toggle='tab') {{ title }}
-  i.glyphicon.glyphicon-remove(@click='delete')
+   i.glyphicon.glyphicon-remove(@click='delete')
 </template>
 <script>
   import { deleteShoppingList } from '../vuex/actions'

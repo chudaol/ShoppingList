@@ -1,7 +1,7 @@
 <template lang="jade">
   li(v-bind:class='{ "removed": item.checked }')
-  input(v-model='item.checked', type='checkbox')
-  span {{ item.text }}
+    input(v-model='item.checked', type='checkbox')
+    span {{ item.text }}
 </template>
 
 <script>

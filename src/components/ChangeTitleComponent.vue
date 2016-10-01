@@ -1,7 +1,7 @@
 <template lang="jade">
   div
-  em Change the title of your shopping list here
-  input(v-model='title' @keyup='tryChangeTitle')
+    em Change the title of your shopping list here
+    input(v-model='title' @keyup='tryChangeTitle')
 </template>
 
 <script>

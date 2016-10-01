@@ -1,14 +1,14 @@
 <template lang="jade">
   div#app.container
-  ul.nav.nav-tabs(role='tablist')
-  li(v-for='list in shoppinglists', role='presentation', :class='$index===0 ? "active" : ""')
-  shopping-list-title-component(:id='list.id', :title='list.title')
-  li
-  a(href='#', @click='addShoppingList')
-  i.glyphicon.glyphicon-plus-sign
-  .tab-content
-  .tab-pane(v-for='list in shoppinglists', role='tabpanel', :id='list.id', :class='$index===0 ? "active" : ""')
-  shopping-list-component(:id='list.id', :title='list.title', :items='list.items')
+    ul.nav.nav-tabs(role='tablist')
+      li(v-for='list in shoppinglists', role='presentation', :class='$index===0 ? "active" : ""')
+        shopping-list-title-component(:id='list.id', :title='list.title')
+      li
+        a(href='#', @click='addShoppingList')
+          i.glyphicon.glyphicon-plus-sign
+    .tab-content
+      .tab-pane(v-for='list in shoppinglists', role='tabpanel', :id='list.id', :class='$index===0 ? "active" : ""')
+        shopping-list-component(:id='list.id', :title='list.title', :items='list.items')
 </template>
 
 <script>
@@ -38,6 +38,8 @@
     },
     ready() {
       this.populateShoppingLists()
+      console.log("heeeeeyyy")
+      console.log(this.shoppinglists)
     },
     store
   }

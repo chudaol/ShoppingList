@@ -1,11 +1,11 @@
 <template lang="jade">
   div
-  h2 {{ title }}
-  add-item-component(:items='items', :id='id')
-  items-component(:items='items', :id='id')
-  .footer
-  hr
-  change-title-component(:title='title', :id='id')
+    h2 {{ title }}
+    add-item-component(:items='items', :id='id')
+    items-component(:items='items', :id='id')
+    .footer
+      hr
+      change-title-component(:title='title', :id='id')
 </template>
 
 <script>
