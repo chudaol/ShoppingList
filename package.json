@@ -52,6 +52,7 @@
     "vue-hot-reload-api": "^1.2.0",
     "vue-html-loader": "^1.0.0",
     "vue-loader": "^8.3.0",
+    "vue-resource": "^1.0.3",
     "vue-style-loader": "^1.0.0",
     "vuex": "^1.0.0-rc.2",
     "webpack": "^1.12.2",
