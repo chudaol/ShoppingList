@@ -13,7 +13,7 @@
     "test": "npm run unit && npm run e2e",
     "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs",
     "postinstall": "npm run build",
-    "start": "nohup npm run server & node server.js"
+    "start": "node server.js"
   },
   "dependencies": {
     "babel-core": "^6.0.0",

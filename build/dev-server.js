@@ -1,5 +1,6 @@
 var path = require('path')
 var express = require('express')
+var jsonServer = require('json-server')
 var webpack = require('webpack')
 var config = require('../config')
 var proxyMiddleware = require('http-proxy-middleware')
@@ -51,6 +52,9 @@ app.use(devMiddleware)
 // enable hot-reload and state-preserving
 // compilation error display
 app.use(hotMiddleware)
+
+// use json server
+app.use('/api', jsonServer.router('server/db.json'));
 
 // serve pure static assets
 var staticPath = path.posix.join(config.dev.assetsPublicPath, config.dev.assetsSubDirectory)
