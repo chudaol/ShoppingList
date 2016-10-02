@@ -41,6 +41,7 @@
     "isparta-loader": "^2.0.0",
     "jade": "^1.11.0",
     "json-loader": "^0.5.4",
+    "json-server": "^0.8.21",
     "lolex": "^1.4.0",
     "ora": "^0.2.0",
     "serve-static": "^1.11.1",
