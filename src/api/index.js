@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import VueResource from 'vue-resource'
 
-Vue.use(VueResource);
+Vue.use(VueResource)
 
-const ShoppingListsResource = Vue.resource('api/' + 'shoppinglists{/id}')
+const ShoppingListsResource = Vue.resource('http://localhost:3000/' + 'shoppinglists{/id}')
 
 export default {
   fetchShoppingLists: () => {
@@ -13,9 +13,9 @@ export default {
     return ShoppingListsResource.save(data)
   },
   updateShoppingList: (data) => {
-    return ShoppingListsResource.update({id: data.id}, data)
+    return ShoppingListsResource.update({ id: data.id }, data)
   },
   deleteShoppingList: (id) => {
-    return ShoppingListsResource.remove({id: id})
+    return ShoppingListsResource.remove({ id: id })
   }
 }

@@ -1,11 +1,13 @@
-<template lang="jade">
-  div
-    h2 {{ title }}
-    add-item-component(:items='items', :id='id')
-    items-component(:items='items', :id='id')
-    .footer
-      hr
-      change-title-component(:title='title', :id='id')
+<template>
+  <div>
+    <h2>{{ title }}</h2>
+    <add-item-component :id="id" @add="addItem"></add-item-component>
+    <items-component :items="items" :id="id"></items-component>
+    <div class="footer">
+      <hr />
+      <change-title-component :title="title" :id="id"></change-title-component>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -19,7 +21,15 @@
       ItemsComponent,
       ChangeTitleComponent
     },
-    props: ['id', 'title', 'items']
+    props: ['id', 'title', 'items'],
+    methods: {
+      addItem (text) {
+        this.items.push({
+          text: text,
+          checked: false
+        })
+      }
+    }
   }
 </script>
 

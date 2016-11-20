@@ -1,7 +1,7 @@
-//store.js
 import Vue from 'vue'
 import Vuex from 'vuex'
-import _ from 'underscore'
+import getters from './getters'
+import actions from './actions'
 import mutations from './mutations'
 
 Vue.use(Vuex)
@@ -12,5 +12,7 @@ const state = {
 
 export default new Vuex.Store({
   state,
-  mutations
+  mutations,
+  getters,
+  actions
 })

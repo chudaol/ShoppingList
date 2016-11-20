@@ -1,4 +1,4 @@
-import * as getters from 'src/vuex/getters'
+import getters from 'src/vuex/getters'
 
 describe('getters.js', () => {
   var state, lists
@@ -26,3 +26,4 @@ describe('getters.js', () => {
     })
   })
 })
+

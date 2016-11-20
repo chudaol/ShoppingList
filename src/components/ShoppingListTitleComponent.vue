@@ -1,27 +1,19 @@
-<template lang="jade">
-  a(:href='href', :aria-controls='id', role="tab", data-toggle='tab') {{ title }}
-   i.glyphicon.glyphicon-remove(@click='delete')
+<template>
+  <a :href="href" :aria-controls="id" role="tab" data-toggle="tab">{{ title }}
+    <i class="glyphicon glyphicon-remove" @click="deleteShoppingList(id)"></i>
+  </a>
 </template>
 <script>
-  import { deleteShoppingList } from '../vuex/actions'
+  import { mapActions } from 'vuex'
 
   export default{
     props: ['id', 'title'],
     computed: {
-      href: function () {
-        return '#' + this.id;
+      href () {
+        return '#' + this.id
       }
     },
-    vuex: {
-      actions: {
-        deleteShoppingList
-      }
-    },
-    methods: {
-      delete() {
-        this.deleteShoppingList(this.id)
-      }
-    }
+    methods: mapActions(['deleteShoppingList'])
   }
 </script>
 <style scoped>

@@ -1,18 +1,19 @@
-<template lang="jade">
-  li(v-bind:class='{ "removed": item.checked }')
-    input(v-model='item.checked', type='checkbox')
-    span {{ item.text }}
+<template>
+  <li :class="{ 'removed': item.checked }">
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" v-model="item.checked"> {{ item.text }}
+      </label>
+    </div>
+  </li>
 </template>
 
 <script>
-  import { updateList } from '../vuex/actions'
+  import { mapActions } from 'vuex'
+
   export default {
-    vuex: {
-      actions: {
-        updateList
-      }
-    },
-    props: ['id', 'item'],
+    props: ['item', 'id'],
+    methods: mapActions(['updateList']),
     watch: {
       'item.checked': function () {
         this.updateList(this.id)
@@ -25,15 +26,12 @@
   .removed {
     color: gray;
   }
-
-  .removed span {
+  .removed label {
     text-decoration: line-through;
   }
-
   li {
     list-style-type: none;
   }
-
   li span {
     margin-left: 5px;
   }

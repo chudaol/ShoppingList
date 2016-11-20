@@ -1,15 +1,17 @@
-<template lang="jade">
-  item-component(v-for="item in items", :item="item", :id="id")
+<template>
+  <ul>
+    <item-component v-for="item in items" :item="item" :id="id"></item-component>
+  </ul>
 </template>
 
 <script>
   import ItemComponent from './ItemComponent'
 
   export default {
-    props: ['items', 'id'],
     components: {
       ItemComponent
-    }
+    },
+    props: ['items', 'id']
   }
 </script>
 
